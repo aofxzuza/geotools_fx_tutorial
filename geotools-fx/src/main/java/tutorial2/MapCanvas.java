@@ -14,8 +14,6 @@ import org.geotools.renderer.lite.StreamingRenderer;
 import org.geotools.styling.SLD;
 import org.geotools.styling.Style;
 import org.jfree.fx.FXGraphics2D;
-import org.opengis.geometry.Envelope;
-import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 import javafx.application.Platform;
 import javafx.concurrent.ScheduledService;
