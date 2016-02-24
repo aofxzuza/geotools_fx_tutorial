@@ -13,7 +13,7 @@ public class MainTutorial1 extends Application {
 		Pane pane = new Pane(canvas.getCanvas());
 		Scene scene = new Scene(pane);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Map Example");
+		primaryStage.setTitle("Map Tutorial 1");
 		primaryStage.show();
 	}
 

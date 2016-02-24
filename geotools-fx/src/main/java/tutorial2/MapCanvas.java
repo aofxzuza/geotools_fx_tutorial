@@ -79,7 +79,13 @@ public class MapCanvas {
 	private double baseDrageX;
 	private double baseDrageY;
 
+	/*
+	 *initial for mouse event 
+	 */
 	private void initEvent() {
+		/*
+		 * setting the original coordinate
+		 */
 		canvas.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
 
 			@Override
@@ -89,6 +95,9 @@ public class MapCanvas {
 				e.consume();
 			}
 		});
+		/*
+		 * translate according to the mouse drag
+		 */
 		canvas.addEventHandler(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent e) {
@@ -106,6 +115,9 @@ public class MapCanvas {
 
 			}
 		});
+		/*
+		 * double clicks to restore to original map
+		 */
 		canvas.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {
@@ -115,6 +127,9 @@ public class MapCanvas {
 				t.consume();
 			}
 		});
+		/*
+		 * scroll for zoom in and out
+		 */
 		canvas.addEventHandler(ScrollEvent.SCROLL, new EventHandler<ScrollEvent>() {
 
 			@Override
@@ -133,7 +148,6 @@ public class MapCanvas {
 	}
 
 	private static final double PAINT_HZ = 50.0;
-
 	private void initPaintThread() {
 		ScheduledService<Boolean> svc = new ScheduledService<Boolean>() {
 			protected Task<Boolean> createTask() {
@@ -149,7 +163,6 @@ public class MapCanvas {
 		};
 		svc.setPeriod(Duration.millis(1000.0 / PAINT_HZ));
 		svc.start();
-
 	}
 
 	protected void doSetDisplayArea(ReferencedEnvelope envelope) {
