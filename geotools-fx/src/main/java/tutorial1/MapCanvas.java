@@ -35,7 +35,8 @@ public class MapCanvas {
 
 	private void initMap() {
 		try {
-			FileDataStore store = FileDataStoreFinder.getDataStore(this.getClass().getResource("countries.shp"));
+			FileDataStore store = FileDataStoreFinder
+					.getDataStore(this.getClass().getClassLoader().getResource("maps/countries.shp"));
 			SimpleFeatureSource featureSource = store.getFeatureSource();
 			map = new MapContent();
 			map.setTitle("Quickstart");
